@@ -38,9 +38,7 @@ app.use(cookieParser());
 routes(app);
 
 mongoose
-  .connect(
-    `mongodb+srv://trungqt1905:B9OHsDesToCd9GZc@cluster0.5pgoj.mongodb.net/api_shopNext`
-  )
+  .connect(`${process.env.MONGO_DB}`)
   .then(() => {
     console.log("Connect Db success!");
   })
